@@ -27,6 +27,11 @@ def check(codeString, filename, options):
     """
     # First, compile into an AST and handle syntax errors.
     try:
+        f = open(filename, 'r')
+        if any([True for x in xrange(2) if '# pyflakes.skip' in f.readline()]):
+            f.close()
+            return 0
+        f.close()
         tree = compile(codeString, filename, "exec", _ast.PyCF_ONLY_AST)
     except SyntaxError, value:
         msg = value.args[0]

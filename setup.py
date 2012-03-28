@@ -6,7 +6,7 @@ from distutils.core import setup
 setup(
     name="pyflakes",
     license="MIT",
-    version="0.4.0a",
+    version="0.4.0b",
     description="passive checker of Python programs",
     author="Phil Frost",
     maintainer="Moe Aboulkheir",
