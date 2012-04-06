@@ -57,6 +57,9 @@ def check(codeString, filename, options):
                 print >> sys.stderr, " " * offset, "^"
 
         return 1
+    except UnicodeError, msg:
+        print >> sys.stderr, 'encoding error at %r: %s' % (filename, msg)
+        return 1
     else:
         # Okay, it's syntactically valid.  Now check it.
         w = checker.Checker(tree, filename)
