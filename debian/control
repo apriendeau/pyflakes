@@ -1,0 +1,19 @@
+Source: pyflakes
+Section: python
+Priority: optional
+Maintainer: Vadim Graboys <vadim@chartbeat.com>
+Build-Depends: debhelper (>= 7), python-support (>= 1.0.0), python, quilt (>= 0.46-7)
+XS-Python-Version: >= 2.5
+Standards-Version: 3.8.3
+
+Package: pyflakes
+Architecture: all
+XB-Python-Version: ${python:Versions}
+Depends: ${python:Depends}, ${misc:Depends}
+Description: passive checker of Python programs
+ Pyflakes is program to analyze Python programs and detect various
+ errors. It works by parsing the source file, not importing it, so it
+ is safe to use on modules with side effects. It's also much faster.
+ .
+ Unlike PyLint, Pyflakes checks only for logical errors in programs;
+ it does not perform any checks on style.
